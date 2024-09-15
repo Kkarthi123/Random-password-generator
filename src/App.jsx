@@ -1,6 +1,5 @@
 
 import { useState } from 'react'
-import './App.css'
 import { useEffect } from 'react';
 import { useCallback } from 'react';
 import { useRef } from 'react';
@@ -10,7 +9,8 @@ function App() {
   const [isCharAllowed, setIsCharAllowed] = useState(false);
   const [isNumberAllowed, setIsNumberAllowed] = useState(false);
   const [sliderLength, setSliderLength] = useState(10);
-  let inputRef = useRef()
+  let inputRef = useRef();
+  let refrehIconRef = useRef()
 
 
   const generatePassword = useCallback(()=>{
@@ -36,6 +36,15 @@ function App() {
   const copyPassword = ()=>{
     navigator.clipboard.writeText(password);
     inputRef.current?.select()
+  }
+
+  const refreshPass = ()=>{
+    let e = document.querySelector(`.password-refresh-icon i`)
+    e.classList.add("rotate")
+    setTimeout(()=>{
+      generatePassword();
+      e.classList.remove("rotate")
+    },400)
   }
 
   useEffect(()=>{
@@ -73,10 +82,9 @@ function App() {
               defaultChecked={isNumberAllowed}
               onChange={()=> setIsNumberAllowed((prev) => !prev)} 
             />
-            <label htmlFor="number">Numbers</label>
+            <label htmlFor="number" title='Include numbers'>Numbers</label>
           </div>
           <div className='password-checkbox'>
-            
             <input 
               type="checkbox" 
               name="" 
@@ -84,7 +92,10 @@ function App() {
               defaultChecked={isCharAllowed}
               onChange={()=>setIsCharAllowed((prev) => !prev)}
             />
-            <label htmlFor="character">Charcters</label>
+            <label htmlFor="character" title='Include character'>Charcters</label>
+          </div>
+          <div className='password-refresh-icon' onClick={refreshPass} ref={refrehIconRef} title='Refresh password'>
+           <i className="fa-solid fa-arrows-rotate"></i>
           </div>
         </div>
       </div>

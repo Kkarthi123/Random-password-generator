@@ -90,6 +90,30 @@ body, html{
     }
   }
 }
+.password-refresh-icon{
+  padding: 8px;
+  background: linear-gradient(45deg, #4278ae, #30bfc9a6);
+  display: flex;
+  font-size: 16px;
+  border-radius: 50%;
+  color: #e1dede;
+  cursor: pointer;
+}
+
+.password-refresh-icon i.rotate{
+  animation: rotate 0.5s ease-in-out forwards;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
 
 
 
