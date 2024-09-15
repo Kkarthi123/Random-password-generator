@@ -1,0 +1,96 @@
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html{
+  overflow: hidden;
+  margin: 0;
+}
+
+.password-conatiner-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(16 16 16);
+  flex-direction: column;
+
+  h1{
+    background: linear-gradient(45deg, #4976cf, #36bdb8cf);
+    background-clip: text;
+    color: transparent;
+  }
+}
+.password-container{
+  border: 2px solid rgb(255 255 255 / 8%);
+  padding: 10px;
+  border-radius: 5px;
+  background: #ffffff0f;
+}
+
+.password-inputs{
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 20px;
+  input{
+    border: none;
+    padding: 10px;
+    width: 400px;
+    border-radius: 4px 0px 0px 4px;
+    outline: none;
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+  }
+  button{
+    padding: 11px 18px;
+    background-color: rgb(36 117 157);
+    border: none;
+    border-radius: 0px 4px 4px 0px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}
+
+.password-generate-options{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px;
+  color: rgb(173, 173, 173);
+
+  .password-length-slider{
+    label{
+      padding-bottom: 2px;
+      display: block;
+    }
+    input{
+      accent-color:rgb(41, 126, 165);
+    }
+  }
+  .password-checkbox{
+    label{
+      margin-left: 3px;
+    }
+    input{
+      display: inline-block;
+      vertical-align: middle;
+      accent-color: rgb(41, 126, 165);
+    }
+  }
+}
+
+
+
+
